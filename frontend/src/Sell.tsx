@@ -168,7 +168,7 @@ export default function SellScreen({ mode }: SellProps) {
         finalImageUrl = imageUri;
       }
 
-      const response = await fetch('http://192.168.0.226:5000/api/products', {
+      const response = await fetch('https://auction-backend-vgus.onrender.com/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -220,7 +220,7 @@ export default function SellScreen({ mode }: SellProps) {
           style: 'destructive',
           onPress: async () => {
             try {
-              const response = await fetch(`http://192.168.0.226:5000/api/products/${productId}`, {
+              const response = await fetch(`https://auction-backend-vgus.onrender.com/api/products/${productId}`, {
                 method: 'DELETE',
               });
 

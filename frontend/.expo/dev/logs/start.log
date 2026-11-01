@@ -1965,3 +1965,23 @@
 {"_e":"metro:bundling:done","_t":1793558667983,"id":"e","total":1,"ms":22.165276}
 {"_e":"metro:client_log","_t":1793558668197,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
 {"_e":"metro:client_log","_t":1793558668197,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"root:init","_t":1793559596341,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1793559596342,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1793559596343,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1793559596478,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1793559596636,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1793559596677,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1793559596793,"plugins":[]}
+{"_e":"metro:instantiate","_t":1793559598699,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1793559634038,"id":"1","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1793559634038,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1793559634043,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1793559634143,"id":"1","progress":0.06795602308422823,"total":234,"current":61}
+{"_e":"metro:bundling:progress","_t":1793559634243,"id":"1","progress":0.2686394838154001,"total":519,"current":269}
+{"_e":"metro:bundling:progress","_t":1793559634343,"id":"1","progress":0.37670630286579976,"total":712,"current":437}
+{"_e":"metro:bundling:progress","_t":1793559634443,"id":"1","progress":0.7214414978279801,"total":883,"current":750}
+{"_e":"metro:bundling:progress","_t":1793559634543,"id":"1","progress":0.7744,"total":1075,"current":946}
+{"_e":"metro:bundling:progress","_t":1793559634643,"id":"1","progress":0.9191782920162127,"total":1236,"current":1185}
+{"_e":"metro:bundling:progress","_t":1793559634743,"id":"1","progress":0.9831881430258053,"total":1540,"current":1527}
+{"_e":"metro:bundling:done","_t":1793559634799,"id":"1","total":1540,"ms":760.348177}
+{"_e":"metro:client_log","_t":1793559638078,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}

@@ -15,7 +15,7 @@ import { AppContext } from './context/AppContext';
 import { io } from 'socket.io-client';
 
 // 連線到你的後端伺服器 (若用實機測試，請將 localhost 改為電腦區網 IP)
-const SOCKET_URL = 'http://192.168.0.226:5000';
+const SOCKET_URL = 'https://auction-backend-vgus.onrender.com';
 const socket = io(SOCKET_URL);
 
 type AuctionRoomRouteProp = RouteProp<RootStackParamList, 'AuctionRoom'>;

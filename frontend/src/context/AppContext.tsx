@@ -55,7 +55,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // 向後端 API 請求 Supabase 裡的真實商品資料
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://192.168.0.226:5000/api/products');
+      const response = await fetch('https://auction-backend-vgus.onrender.com/api/products');
       const data = await response.json();
       if (Array.isArray(data)) {
         setProducts(data);
