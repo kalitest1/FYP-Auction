@@ -41,4 +41,26 @@ router.post('/', async (req, res) => {
   }
 });
 
+// 🌟 新增：刪除商品的 API 路由 (對應 /api/products/:id)
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const { error } = await supabase
+      .from('products')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      console.error('❌ Supabase Delete Error:', error);
+      return res.status(400).json({ error: error.message });
+    }
+
+    res.status(200).json({ message: 'Product deleted successfully' });
+  } catch (err: any) {
+    console.error('❌ Server DELETE Error:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;
