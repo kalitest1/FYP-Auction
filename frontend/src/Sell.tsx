@@ -208,36 +208,45 @@ export default function SellScreen({ mode }: SellProps) {
     }
   };
 
-  // 🌟 3. 刪除商品的函數
+// 🌟 3. 修改後的刪除商品的函數（支援網頁與行動裝置）
   const handleDeleteProduct = async (productId: string) => {
-    Alert.alert(
-      'Delete Product',
-      'Are you sure you want to delete this auction item?',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Delete',
-          style: 'destructive',
-          onPress: async () => {
-            try {
-              const response = await fetch(`https://auction-backend-vgus.onrender.com/api/products/${productId}`, {
-                method: 'DELETE',
-              });
+    // 檢查是否為網頁環境 (Web)
+    const isWeb = typeof window !== 'undefined' && window.confirm;
 
-              if (!response.ok) {
-                throw new Error('Failed to delete product');
-              }
+    const confirmDelete = isWeb 
+      ? window.confirm('Are you sure you want to delete this auction item?')
+      : await new Promise((resolve) => {
+          Alert.alert(
+            'Delete Product',
+            'Are you sure you want to delete this auction item?',
+            [
+              { text: 'Cancel', onPress: () => resolve(false), style: 'cancel' },
+              { text: 'Delete', onPress: () => resolve(true), style: 'destructive' },
+            ]
+          );
+        });
 
-              Alert.alert('Success', 'Product has been deleted.');
-              await fetchProducts(); // 重新整理列表
-            } catch (error: any) {
-              console.error(error);
-              Alert.alert('Error', error.message || 'Network error');
-            }
-          },
-        },
-      ]
-    );
+    if (!confirmDelete) return;
+
+    try {
+      console.log('Sending DELETE request for product ID:', productId); // 測試用 Log
+
+      const response = await fetch(`https://auction-backend-vgus.onrender.com/api/products/${productId}`, {
+        method: 'DELETE',
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to delete product');
+      }
+
+      alert('Product has been deleted.');
+      await fetchProducts(); // 重新整理列表
+    } catch (error: any) {
+      console.error('Delete error:', error);
+      alert('Error: ' + (error.message || 'Network error'));
+    }
   };
 
   const renderItem = ({ item }: { item: Product }) => {
