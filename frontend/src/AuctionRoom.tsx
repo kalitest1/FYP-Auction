@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import {
-  View,
-  Text,
-  Image,
   StyleSheet,
-  SafeAreaView,
+  Text,
+  View,
+  TextInput,
   TouchableOpacity,
   ScrollView,
-  TextInput,
+  Image,
   Alert,
 } from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { useRoute, useNavigation, RouteProp } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../App';
-import { useApp } from './context/AppContext';
+import { AppContext } from './context/AppContext';
+import { io } from 'socket.io-client';
+
+// 連線到你的後端伺服器 (若用實機測試，請將 localhost 改為電腦區網 IP)
+const SOCKET_URL = 'http://192.168.0.226:5000';
+const socket = io(SOCKET_URL);
 
 type AuctionRoomRouteProp = RouteProp<RootStackParamList, 'AuctionRoom'>;
-type NavigationProp = StackNavigationProp<RootStackParamList>;
 
 interface BidRecord {
   id: string;
@@ -28,410 +29,217 @@ interface BidRecord {
 
 export default function AuctionRoomScreen() {
   const route = useRoute<AuctionRoomRouteProp>();
-  const navigation = useNavigation<NavigationProp>();
-  const { productId } = route.params;
-  const { products, watchlist, toggleWatchlist, addActivity } = useApp();
+  const navigation = useNavigation();
+  const { auctionId, title } = route.params || {};
 
-  const product = products.find((p) => p.id === productId) || products[0];
+  const { products, addActivityNotice } = useContext(AppContext);
+  
+  // 🔍 精準透過 auctionId 尋找對應商品，若找不到則預設為第一個商品
+  const product = products.find((p) => p.id === auctionId) || products[0];
 
   const [currentBid, setCurrentBid] = useState<number>(product ? product.price : 100);
   const [customBid, setCustomBid] = useState<string>('');
-  const [timeLeft, setTimeLeft] = useState<number>(3600); // 1 hour countdown in seconds
+  
+  // ⏱️ 60 秒倒數計時
+  const [timeLeft, setTimeLeft] = useState<number>(30);
+  
   const [bids, setBids] = useState<BidRecord[]>([
-    { id: '1', bidderName: 'User_882', amount: product ? product.price - 20 : 80, time: '10 mins ago' },
-    { id: '2', bidderName: 'Collector_X', amount: product ? product.price : 100, time: '2 mins ago' },
+    { id: '1', bidderName: 'John Doe', amount: product ? product.price : 100, time: '2 mins ago' },
   ]);
 
-  const isLiked = product ? watchlist.some((w) => w.id === product.id) : false;
-
-  // 倒數計時器邏輯
+  // 1. Socket.io 連線與房間加入
   useEffect(() => {
+    const targetId = auctionId || product?.id || '1';
+    socket.emit('join_room', targetId);
+
+    // 監聽來自後端的即時出價廣播
+    socket.on('new_bid', (newBid: BidRecord) => {
+      setBids((prevBids) => [newBid, ...prevBids]);
+      setCurrentBid(newBid.amount);
+    });
+
+    return () => {
+      socket.off('new_bid');
+    };
+  }, [auctionId, product]);
+
+  // 2. 倒數計時器與自動結算邏輯
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+
     const timer = setInterval(() => {
-      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          
+          const hasUserBid = bids.some((b) => b.bidderName.includes('You'));
+          const finalStatus = hasUserBid ? 'SUCCESS' : 'FAILED';
+
+          // 寫入全局 Activity 通知
+          addActivityNotice({
+            id: Date.now().toString(),
+            productTitle: product ? product.title : 'Auction Item',
+            finalPrice: currentBid,
+            status: finalStatus,
+            timestamp: 'Just now',
+          });
+
+          Alert.alert(
+            'Auction Ended!',
+            hasUserBid
+              ? `Congratulations! You won the auction for "${product?.title}" at $${currentBid}!`
+              : `The auction has ended. Winning bid was $${currentBid}.`,
+            [{ text: 'View Activity', onPress: () => navigation.goBack() }]
+          );
+
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [timeLeft, currentBid, bids, product, navigation, addActivityNotice]);
 
-  const formatTime = (seconds: number) => {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = seconds % 60;
-    return `${hrs.toString().padStart(2, '0')}:${mins
-      .toString()
-      .padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-  };
-
-  // 出價處理邏輯
+  // 3. 處理出價動作
   const handlePlaceBid = (amount: number) => {
+    if (timeLeft === 0) {
+      Alert.alert('Auction Closed', 'This auction has already ended. You can no longer place bids.');
+      return;
+    }
+
     if (amount <= currentBid) {
       Alert.alert('Invalid Bid', 'Your bid must be higher than the current highest bid.');
       return;
     }
 
-    const newBid: BidRecord = {
-      id: Date.now().toString(),
+    const targetId = auctionId || product?.id || '1';
+
+    // 透過 Socket 發送出價給後端
+    socket.emit('place_bid', {
+      productId: targetId,
       bidderName: 'You (Alex)',
-      amount,
-      time: 'Just now',
-    };
-
-    setCurrentBid(amount);
-    setBids([newBid, ...bids]);
-    setCustomBid('');
-
-    // 新增出價通知紀錄至 AppContext
-    addActivity({
-      id: Date.now().toString(),
-      productId: product.id,
-      productTitle: product.title,
-      finalPrice: amount,
-      status: 'SUCCESS',
-      timestamp: 'Just now',
+      amount: amount,
     });
 
-    Alert.alert('Bid Placed!', `Your bid of $${amount} has been successfully submitted.`);
+    // 同步在本地畫面直接推入一筆，確保手感即時響應
+    const myNewBid: BidRecord = {
+      id: Date.now().toString(),
+      bidderName: 'You (Alex)',
+      amount: amount,
+      time: 'Just now',
+    };
+    setBids((prev) => [myNewBid, ...prev]);
+    setCurrentBid(amount);
+    setCustomBid('');
   };
 
-  if (!product) {
-    return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.notFoundContainer}>
-          <Text>Product not found.</Text>
-        </View>
-      </SafeAreaView>
-    );
-  }
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `00:${mins < 10 ? '0' + mins : mins}:${secs < 10 ? '0' + secs : secs}`;
+  };
 
   return (
-    <SafeAreaView style={styles.container}>
-      {/* 頂部 Header */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <Ionicons name="arrow-back" size={24} color="#333" />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle} numberOfLines={1}>
-          {product.title}
+    <ScrollView style={styles.container}>
+      {/* 🖼️ 恢復商品圖片顯示 */}
+      {product?.image ? (
+        <Image source={{ uri: product.image }} style={styles.productImage} />
+      ) : null}
+
+      <Text style={styles.title}>{title || product?.title || 'Auction Item'}</Text>
+      <Text style={styles.description}>{product?.description}</Text>
+      
+      {/* 倒數計時顯示 */}
+      <View style={styles.timerContainer}>
+        <Text style={styles.timerText}>
+          {timeLeft === 0 ? 'AUCTION ENDED' : `Time Left: ${formatTime(timeLeft)}`}
         </Text>
-        <TouchableOpacity onPress={() => toggleWatchlist(product)} style={styles.likeButton}>
-          <Ionicons
-            name={isLiked ? 'heart' : 'heart-outline'}
-            size={24}
-            color={isLiked ? '#e74c3c' : '#333'}
-          />
+      </View>
+
+      <View style={styles.priceContainer}>
+        <Text style={styles.label}>Current Highest Bid:</Text>
+        <Text style={styles.price}>${currentBid}</Text>
+      </View>
+
+      {/* 快速出價按鈕 */}
+      <View style={styles.quickBidRow}>
+        {[10, 50, 100].map((inc) => (
+          <TouchableOpacity
+            key={inc}
+            style={[styles.quickBidBtn, timeLeft === 0 && styles.disabledBtn]}
+            disabled={timeLeft === 0}
+            onPress={() => handlePlaceBid(currentBid + inc)}
+          >
+            <Text style={[styles.quickBidText, timeLeft === 0 && { color: '#888' }]}>
+              +${inc}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+
+      {/* 自訂出價區塊 */}
+      <View style={styles.customBidRow}>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter custom bid"
+          keyboardType="numeric"
+          value={customBid}
+          onChangeText={setCustomBid}
+          editable={timeLeft > 0}
+        />
+        <TouchableOpacity
+          style={[styles.submitBtn, timeLeft === 0 && styles.disabledBtn]}
+          disabled={timeLeft === 0}
+          onPress={() => {
+            const val = parseFloat(customBid);
+            if (!isNaN(val)) {
+              handlePlaceBid(val);
+            } else {
+              Alert.alert('Error', 'Please enter a valid number');
+            }
+          }}
+        >
+          <Text style={styles.submitBtnText}>
+            {timeLeft === 0 ? 'Closed' : 'Bid'}
+          </Text>
         </TouchableOpacity>
       </View>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {/* 商品主圖與倒數計時橫條 */}
-        <View style={styles.imageContainer}>
-          <Image source={{ uri: product.image }} style={styles.productImage} />
-          <View style={styles.timerBadge}>
-            <Ionicons name="time-outline" size={16} color="#fff" />
-            <Text style={styles.timerText}>{formatTime(timeLeft)}</Text>
-          </View>
+      {/* 出價歷史紀錄 */}
+      <Text style={styles.historyTitle}>Live Bid History</Text>
+      {bids.map((bid) => (
+        <View key={bid.id} style={styles.bidItem}>
+          <Text style={styles.bidder}>{bid.bidderName}</Text>
+          <Text style={styles.bidAmount}>${bid.amount}</Text>
+          <Text style={styles.bidTime}>{bid.time}</Text>
         </View>
-
-        {/* 價格與統計數據區塊 */}
-        <View style={styles.detailsCard}>
-          <Text style={styles.productTitle}>{product.title}</Text>
-          <Text style={styles.categoryBadge}>{product.category}</Text>
-
-          <View style={styles.priceRow}>
-            <View>
-              <Text style={styles.priceLabel}>Current Highest Bid</Text>
-              <Text style={styles.currentPrice}>${currentBid}</Text>
-            </View>
-            <View style={styles.bidCountBadge}>
-              <Text style={styles.bidCountText}>{bids.length} Bids</Text>
-            </View>
-          </View>
-
-          <Text style={styles.description}>{product.description}</Text>
-        </View>
-
-        {/* 快速出價與自訂出價區塊 */}
-        <View style={styles.bidActionCard}>
-          <Text style={styles.sectionTitle}>Place Your Bid</Text>
-          <View style={styles.quickBidRow}>
-            {[10, 50, 100].map((inc) => (
-              <TouchableOpacity
-                key={inc}
-                style={styles.quickBidBtn}
-                onPress={() => handlePlaceBid(currentBid + inc)}
-              >
-                <Text style={styles.quickBidText}>+${inc}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-
-          <View style={styles.customBidRow}>
-            <View style={styles.inputPrefix}>
-              <Text style={styles.prefixText}>$</Text>
-              <TextInput
-                style={styles.customBidInput}
-                placeholder={`> ${currentBid}`}
-                keyboardType="numeric"
-                value={customBid}
-                onChangeText={setCustomBid}
-              />
-            </View>
-            <TouchableOpacity
-              style={styles.submitBidBtn}
-              onPress={() => {
-                const val = parseFloat(customBid);
-                if (!isNaN(val)) handlePlaceBid(val);
-              }}
-            >
-              <Text style={styles.submitBidText}>Submit Bid</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        {/* 出價歷史紀錄 */}
-        <View style={styles.historyCard}>
-          <Text style={styles.sectionTitle}>Bid History</Text>
-          {bids.map((b) => (
-            <View key={b.id} style={styles.historyItem}>
-              <View style={styles.bidderInfo}>
-                <Ionicons name="person-circle-outline" size={24} color="#666" />
-                <Text style={styles.bidderName}>{b.bidderName}</Text>
-              </View>
-              <View style={styles.bidAmountInfo}>
-                <Text style={styles.historyAmount}>${b.amount}</Text>
-                <Text style={styles.historyTime}>{b.time}</Text>
-              </View>
-            </View>
-          ))}
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+      ))}
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f8f9fa',
-  },
-  notFoundContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-  },
-  backButton: {
-    padding: 4,
-  },
-  headerTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-    flex: 1,
-    textAlign: 'center',
-    marginHorizontal: 10,
-  },
-  likeButton: {
-    padding: 4,
-  },
-  imageContainer: {
-    position: 'relative',
-    width: '100%',
-    height: 260,
-    backgroundColor: '#e0e0e0',
-  },
-  productImage: {
-    width: '100%',
-    height: '100%',
-  },
-  timerBadge: {
-    position: 'absolute',
-    bottom: 12,
-    right: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.75)',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
-  },
-  timerText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    marginLeft: 6,
-    fontSize: 13,
-  },
-  detailsCard: {
-    backgroundColor: '#fff',
-    padding: 16,
-    marginBottom: 10,
-  },
-  productTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#1a1a1a',
-  },
-  categoryBadge: {
-    alignSelf: 'flex-start',
-    backgroundColor: '#f0f0f0',
-    color: '#666',
-    fontSize: 12,
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 6,
-    marginTop: 6,
-    marginBottom: 12,
-  },
-  priceRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: 10,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: '#f0f0f0',
-    marginVertical: 8,
-  },
-  priceLabel: {
-    fontSize: 12,
-    color: '#888',
-  },
-  currentPrice: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#27ae60',
-    marginTop: 2,
-  },
-  bidCountBadge: {
-    backgroundColor: '#e8f0fe',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 12,
-  },
-  bidCountText: {
-    color: '#007AFF',
-    fontWeight: 'bold',
-    fontSize: 13,
-  },
-  description: {
-    fontSize: 14,
-    color: '#555',
-    lineHeight: 20,
-    marginTop: 8,
-  },
-  bidActionCard: {
-    backgroundColor: '#fff',
-    padding: 16,
-    marginBottom: 10,
-  },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 12,
-  },
-  quickBidRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 12,
-  },
-  quickBidBtn: {
-    flex: 1,
-    backgroundColor: '#f0f4f8',
-    paddingVertical: 10,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginHorizontal: 4,
-    borderWidth: 1,
-    borderColor: '#d0dbe5',
-  },
-  quickBidText: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#007AFF',
-  },
-  customBidRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  inputPrefix: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#f8f9fa',
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    marginRight: 10,
-    height: 44,
-  },
-  prefixText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-    marginRight: 6,
-  },
-  customBidInput: {
-    flex: 1,
-    fontSize: 15,
-    color: '#333',
-  },
-  submitBidBtn: {
-    backgroundColor: '#27ae60',
-    paddingHorizontal: 20,
-    height: 44,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  submitBidText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 15,
-  },
-  historyCard: {
-    backgroundColor: '#fff',
-    padding: 16,
-    marginBottom: 20,
-  },
-  historyItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#f8f9fa',
-  },
-  bidderInfo: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  bidderName: {
-    fontSize: 14,
-    fontWeight: '500',
-    color: '#333',
-    marginLeft: 8,
-  },
-  bidAmountInfo: {
-    alignItems: 'flex-end',
-  },
-  historyAmount: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#1a1a1a',
-  },
-  historyTime: {
-    fontSize: 11,
-    color: '#999',
-    marginTop: 2,
-  },
+  container: { flex: 1, padding: 20, backgroundColor: '#fff' },
+  productImage: { width: '100%', height: 220, borderRadius: 12, marginBottom: 15, resizeMode: 'cover' },
+  title: { fontSize: 22, fontWeight: 'bold', marginBottom: 5 },
+  description: { fontSize: 14, color: '#666', marginBottom: 15 },
+  timerContainer: { backgroundColor: '#FF3B30', padding: 10, borderRadius: 8, alignItems: 'center', marginBottom: 15 },
+  timerText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+  priceContainer: { marginBottom: 20, alignItems: 'center' },
+  label: { fontSize: 14, color: '#666' },
+  price: { fontSize: 32, fontWeight: 'bold', color: '#007AFF' },
+  quickBidRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15 },
+  quickBidBtn: { flex: 1, backgroundColor: '#E5E5EA', padding: 12, marginHorizontal: 5, borderRadius: 8, alignItems: 'center' },
+  quickBidText: { fontSize: 16, fontWeight: '600', color: '#007AFF' },
+  customBidRow: { flexDirection: 'row', marginBottom: 25 },
+  input: { flex: 2, borderWidth: 1, borderColor: '#ccc', borderRadius: 8, paddingHorizontal: 12, height: 45, marginRight: 10 },
+  submitBtn: { flex: 1, backgroundColor: '#007AFF', justifyContent: 'center', alignItems: 'center', borderRadius: 8 },
+  submitBtnText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
+  disabledBtn: { backgroundColor: '#d1d1d6' },
+  historyTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 10 },
+  bidItem: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#eee' },
+  bidder: { fontSize: 14, fontWeight: '600' },
+  bidAmount: { fontSize: 14, fontWeight: 'bold', color: '#007AFF' },
+  bidTime: { fontSize: 12, color: '#888' },
 });

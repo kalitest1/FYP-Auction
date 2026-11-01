@@ -25,10 +25,19 @@ export default function SearchListScreen() {
 
   // 根據傳入的 query 或 category 過濾商品
   const filteredProducts = products.filter((item) => {
-    if (query) {
-      return item.title.toLowerCase().includes(query.toLowerCase());
-    }
-    return true;
+    // 1. 如果有傳入 query，比對商品標題
+    const matchesQuery = query
+      ? item.title.toLowerCase().includes(query.toLowerCase())
+      : true;
+
+    // 2. 如果有傳入 category (且不是 'All')，比對商品的 category
+    const matchesCategory =
+      category && category !== 'All'
+        ? item.category && item.category.toLowerCase() === category.toLowerCase()
+        : true;
+
+    // 必須同時符合傳入的條件
+    return matchesQuery && matchesCategory;
   });
 
   const renderItem = ({ item }: { item: Product }) => {

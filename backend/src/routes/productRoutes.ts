@@ -1,29 +1,44 @@
-import { Router, Request, Response } from 'express';
+import express from 'express';
 import { supabase } from '../config/supabase';
 
-const router = Router();
+const router = express.Router();
 
-// 1. 取得所有拍賣商品
-router.get('/', async (req: Request, res: Response) => {
+// 取得所有商品
+router.get('/', async (req, res) => {
   const { data, error } = await supabase.from('products').select('*');
-  if (error) {
-    return res.status(500).json({ error: error.message });
-  }
-  return res.json(data);
+  if (error) return res.status(400).json({ error: error.message });
+  res.json(data);
 });
 
-// 2. 新增拍賣商品 (賣家功能)
-router.post('/', async (req: Request, res: Response) => {
-  const { title, description, price, category, image } = req.body;
-  const { data, error } = await supabase
-    .from('products')
-    .insert([{ title, description, price, category, image }])
-    .select();
+// 新增商品 (Seller 上傳)
+router.post('/', async (req, res) => {
+  try {
+    const { title, description, price, category, image, duration } = req.body;
 
-  if (error) {
-    return res.status(500).json({ error: error.message });
+    const { data, error } = await supabase
+      .from('products')
+      .insert([
+        { 
+          title, 
+          description, 
+          price: parseFloat(price), 
+          category: category || 'General', 
+          image: image || 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500',
+          duration: duration || 60 
+        }
+      ])
+      .select();
+
+    if (error) {
+      console.error('❌ Supabase Insert Error:', error);
+      return res.status(400).json({ error: error.message });
+    }
+
+    res.status(201).json(data[0]);
+  } catch (err: any) {
+    console.error('❌ Server POST Error:', err);
+    res.status(500).json({ error: err.message });
   }
-  return res.status(201).json(data[0]);
 });
 
 export default router;

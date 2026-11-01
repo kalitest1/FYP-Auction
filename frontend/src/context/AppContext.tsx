@@ -1,9 +1,10 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 export interface Product {
   id: string;
   title: string;
   price: number;
+  category?: string;
   image: string;
   description: string;
   isLiked?: boolean;
@@ -25,43 +26,13 @@ interface AppContextType {
   toggleWatchlist: (product: Product) => void;
   setActiveAuctionItem: (product: Product) => void;
   addActivityNotice: (notice: ActivityNotice) => void;
+  fetchProducts: () => Promise<void>;
 }
 
-const INITIAL_PRODUCTS: Product[] = [
-  {
-    id: '1',
-    title: 'Vintage Rolex Submariner',
-    price: 8500,
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500',
-    description: 'Classic 1980s luxury watch in excellent condition.',
-  },
-  {
-    id: '2',
-    title: 'Diamond Engagement Ring',
-    price: 3200,
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500',
-    description: '18k White Gold with 1.5 Carat Diamond.',
-  },
-  {
-    id: '3',
-    title: 'Abstract Modern Oil Painting',
-    price: 1200,
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=500',
-    description: 'Original hand-painted canvas art piece.',
-  },
-  {
-    id: '4',
-    title: 'Limited Edition Sneakers',
-    price: 450,
-    image: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?w=500',
-    description: 'Collector item, unworn size 10 US.',
-  },
-];
-
-const AppContext = createContext<AppContextType | undefined>(undefined);
+export const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [products, setProducts] = useState<Product[]>(INITIAL_PRODUCTS);
+  const [products, setProducts] = useState<Product[]>([]);
   const [watchlist, setWatchlist] = useState<Product[]>([]);
   const [activities, setActivities] = useState<ActivityNotice[]>([
     {
@@ -80,6 +51,24 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     },
   ]);
   const [activeAuctionItem, setActiveAuctionItem] = useState<Product | null>(null);
+
+  // 向後端 API 請求 Supabase 裡的真實商品資料
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch('http://192.168.0.226:5000/api/products');
+      const data = await response.json();
+      if (Array.isArray(data)) {
+        setProducts(data);
+      }
+    } catch (error) {
+      console.error('Failed to fetch products from backend:', error);
+    }
+  };
+
+  // 程式初始化時自動抓取一次
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   const toggleWatchlist = (product: Product) => {
     setWatchlist((prev) => {
@@ -112,6 +101,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         toggleWatchlist,
         setActiveAuctionItem,
         addActivityNotice,
+        fetchProducts,
       }}
     >
       {children}
