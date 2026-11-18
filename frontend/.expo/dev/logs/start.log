@@ -1985,3 +1985,525 @@
 {"_e":"metro:bundling:progress","_t":1793559634743,"id":"1","progress":0.9831881430258053,"total":1540,"current":1527}
 {"_e":"metro:bundling:done","_t":1793559634799,"id":"1","total":1540,"ms":760.348177}
 {"_e":"metro:client_log","_t":1793559638078,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"root:init","_t":1795020786212,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795020786213,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795020786215,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795020786402,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795020786672,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795020786765,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795020786882,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795020788668,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795020793653,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795020793654,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795020793658,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795020794427,"id":"1","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1795020794527,"id":"1","progress":0.010000000000000002,"total":3,"current":1}
+{"_e":"metro:bundling:progress","_t":1795020794599,"id":"1","progress":0.04000000000000001,"total":3,"current":2}
+{"_e":"metro:bundling:progress","_t":1795020794701,"id":"1","progress":0.04000000000000001,"total":39,"current":5}
+{"_e":"metro:bundling:progress","_t":1795020794895,"id":"1","progress":0.04000000000000001,"total":39,"current":6}
+{"_e":"metro:bundling:progress","_t":1795020794996,"id":"1","progress":0.04000000000000001,"total":49,"current":8}
+{"_e":"metro:bundling:progress","_t":1795020795117,"id":"1","progress":0.04000000000000001,"total":49,"current":9}
+{"_e":"metro:bundling:progress","_t":1795020795217,"id":"1","progress":0.04000000000000001,"total":56,"current":11}
+{"_e":"metro:bundling:progress","_t":1795020795335,"id":"1","progress":0.07354208560758403,"total":59,"current":16}
+{"_e":"metro:bundling:progress","_t":1795020795477,"id":"1","progress":0.08302212008043666,"total":59,"current":17}
+{"_e":"metro:bundling:progress","_t":1795020795578,"id":"1","progress":0.15311909262759926,"total":69,"current":27}
+{"_e":"metro:bundling:progress","_t":1795020795698,"id":"1","progress":0.16888722086695437,"total":73,"current":30}
+{"_e":"metro:bundling:progress","_t":1795020795801,"id":"1","progress":0.243710943759013,"total":79,"current":39}
+{"_e":"metro:bundling:progress","_t":1795020795904,"id":"1","progress":0.243710943759013,"total":103,"current":45}
+{"_e":"metro:bundling:progress","_t":1795020796006,"id":"1","progress":0.243710943759013,"total":113,"current":49}
+{"_e":"metro:bundling:progress","_t":1795020796106,"id":"1","progress":0.243710943759013,"total":140,"current":54}
+{"_e":"metro:bundling:progress","_t":1795020796206,"id":"1","progress":0.243710943759013,"total":192,"current":65}
+{"_e":"metro:bundling:progress","_t":1795020796307,"id":"1","progress":0.243710943759013,"total":201,"current":77}
+{"_e":"metro:bundling:progress","_t":1795020796408,"id":"1","progress":0.243710943759013,"total":214,"current":89}
+{"_e":"metro:bundling:progress","_t":1795020796511,"id":"1","progress":0.243710943759013,"total":223,"current":103}
+{"_e":"metro:bundling:progress","_t":1795020796611,"id":"1","progress":0.243710943759013,"total":255,"current":112}
+{"_e":"metro:bundling:progress","_t":1795020796711,"id":"1","progress":0.2538313618087524,"total":262,"current":132}
+{"_e":"metro:bundling:progress","_t":1795020796811,"id":"1","progress":0.2538313618087524,"total":325,"current":147}
+{"_e":"metro:bundling:progress","_t":1795020796916,"id":"1","progress":0.2538313618087524,"total":339,"current":157}
+{"_e":"metro:bundling:progress","_t":1795020797016,"id":"1","progress":0.25729888678848983,"total":345,"current":175}
+{"_e":"metro:bundling:progress","_t":1795020797122,"id":"1","progress":0.2734359674806199,"total":371,"current":194}
+{"_e":"metro:bundling:progress","_t":1795020797223,"id":"1","progress":0.29752066115702475,"total":374,"current":204}
+{"_e":"metro:bundling:progress","_t":1795020797322,"id":"1","progress":0.30670083562389344,"total":381,"current":211}
+{"_e":"metro:bundling:progress","_t":1795020797426,"id":"1","progress":0.30670083562389344,"total":402,"current":222}
+{"_e":"metro:bundling:progress","_t":1795020797531,"id":"1","progress":0.3222070526733412,"total":414,"current":235}
+{"_e":"metro:bundling:progress","_t":1795020797631,"id":"1","progress":0.37959614563913663,"total":422,"current":260}
+{"_e":"metro:bundling:progress","_t":1795020797731,"id":"1","progress":0.4046871211620269,"total":426,"current":271}
+{"_e":"metro:bundling:progress","_t":1795020797831,"id":"1","progress":0.4046871211620269,"total":451,"current":286}
+{"_e":"metro:bundling:progress","_t":1795020797931,"id":"1","progress":0.43664732480739005,"total":454,"current":300}
+{"_e":"metro:bundling:progress","_t":1795020798031,"id":"1","progress":0.43664732480739005,"total":475,"current":313}
+{"_e":"metro:bundling:progress","_t":1795020798131,"id":"1","progress":0.4453747308345442,"total":478,"current":319}
+{"_e":"metro:bundling:progress","_t":1795020798232,"id":"1","progress":0.45189830936929315,"total":479,"current":322}
+{"_e":"metro:bundling:progress","_t":1795020798332,"id":"1","progress":0.456314035818409,"total":490,"current":331}
+{"_e":"metro:bundling:progress","_t":1795020798433,"id":"1","progress":0.4714562890187689,"total":501,"current":344}
+{"_e":"metro:bundling:progress","_t":1795020798535,"id":"1","progress":0.4738071648710009,"total":523,"current":360}
+{"_e":"metro:bundling:progress","_t":1795020798635,"id":"1","progress":0.4886924622237751,"total":535,"current":374}
+{"_e":"metro:bundling:progress","_t":1795020798735,"id":"1","progress":0.5158572693141236,"total":543,"current":390}
+{"_e":"metro:bundling:progress","_t":1795020798841,"id":"1","progress":0.539720965997211,"total":554,"current":407}
+{"_e":"metro:bundling:progress","_t":1795020798942,"id":"1","progress":0.5677940884745091,"total":568,"current":428}
+{"_e":"metro:bundling:progress","_t":1795020799043,"id":"1","progress":0.631606648199446,"total":570,"current":453}
+{"_e":"metro:bundling:progress","_t":1795020799143,"id":"1","progress":0.6797023352816232,"total":581,"current":479}
+{"_e":"metro:bundling:progress","_t":1795020799247,"id":"1","progress":0.7085444795882507,"total":594,"current":500}
+{"_e":"metro:bundling:progress","_t":1795020799347,"id":"1","progress":0.7530223345399905,"total":605,"current":525}
+{"_e":"metro:bundling:progress","_t":1795020799448,"id":"1","progress":0.807945839066022,"total":613,"current":551}
+{"_e":"metro:bundling:progress","_t":1795020799549,"id":"1","progress":0.8755182431943425,"total":622,"current":582}
+{"_e":"metro:bundling:progress","_t":1795020799649,"id":"1","progress":0.8903312663987186,"total":638,"current":602}
+{"_e":"metro:bundling:progress","_t":1795020799751,"id":"1","progress":0.8903312663987186,"total":698,"current":631}
+{"_e":"metro:bundling:progress","_t":1795020799853,"id":"1","progress":0.8903312663987186,"total":703,"current":660}
+{"_e":"metro:bundling:progress","_t":1795020799956,"id":"1","progress":0.9393247495076462,"total":714,"current":692}
+{"_e":"metro:bundling:progress","_t":1795020800056,"id":"1","progress":0.9889503610316067,"total":722,"current":718}
+{"_e":"metro:bundling:progress","_t":1795020800156,"id":"1","progress":0.9972432818073721,"total":725,"current":724}
+{"_e":"metro:bundling:progress","_t":1795020800832,"id":"1","progress":0.999,"total":725,"current":725}
+{"_e":"metro:bundling:done","_t":1795020800932,"id":"1","total":725,"ms":7278.702508}
+{"_e":"metro:client_log","_t":1795020801135,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795020801135,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795020831080,"id":"4","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795020831081,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795020831084,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795020831185,"id":"4","progress":0.010000000000000002,"total":3,"current":1}
+{"_e":"metro:bundling:progress","_t":1795020831287,"id":"4","progress":0.010000000000000002,"total":152,"current":11}
+{"_e":"metro:bundling:progress","_t":1795020831388,"id":"4","progress":0.02366863905325444,"total":182,"current":28}
+{"_e":"metro:bundling:progress","_t":1795020831489,"id":"4","progress":0.043757809246147444,"total":196,"current":41}
+{"_e":"metro:bundling:progress","_t":1795020831589,"id":"4","progress":0.0648807404770381,"total":212,"current":54}
+{"_e":"metro:bundling:progress","_t":1795020831689,"id":"4","progress":0.07593086419753087,"total":225,"current":62}
+{"_e":"metro:bundling:progress","_t":1795020831797,"id":"4","progress":0.0944806503628057,"total":244,"current":75}
+{"_e":"metro:bundling:progress","_t":1795020831897,"id":"4","progress":0.1395327711244682,"total":257,"current":96}
+{"_e":"metro:bundling:progress","_t":1795020831997,"id":"4","progress":0.1923668821175746,"total":285,"current":125}
+{"_e":"metro:bundling:progress","_t":1795020832097,"id":"4","progress":0.21423673469387755,"total":350,"current":162}
+{"_e":"metro:bundling:progress","_t":1795020832197,"id":"4","progress":0.21423673469387755,"total":437,"current":191}
+{"_e":"metro:bundling:progress","_t":1795020832297,"id":"4","progress":0.2188138882525577,"total":481,"current":225}
+{"_e":"metro:bundling:progress","_t":1795020832398,"id":"4","progress":0.246124089690987,"total":514,"current":255}
+{"_e":"metro:bundling:progress","_t":1795020832498,"id":"4","progress":0.2590082908163265,"total":560,"current":285}
+{"_e":"metro:bundling:progress","_t":1795020832598,"id":"4","progress":0.2738777777777778,"total":600,"current":314}
+{"_e":"metro:bundling:progress","_t":1795020832701,"id":"4","progress":0.287840765936004,"total":630,"current":338}
+{"_e":"metro:bundling:progress","_t":1795020832798,"id":"4","progress":0.3356497254280023,"total":649,"current":376}
+{"_e":"metro:bundling:progress","_t":1795020832898,"id":"4","progress":0.3729386399393975,"total":655,"current":400}
+{"_e":"metro:bundling:progress","_t":1795020832998,"id":"4","progress":0.40547768907478526,"total":669,"current":426}
+{"_e":"metro:bundling:progress","_t":1795020833098,"id":"4","progress":0.4335303711465656,"total":688,"current":453}
+{"_e":"metro:bundling:progress","_t":1795020833205,"id":"4","progress":0.4386911789509192,"total":693,"current":459}
+{"_e":"metro:bundling:progress","_t":1795020833305,"id":"4","progress":0.44628288899513546,"total":726,"current":485}
+{"_e":"metro:bundling:progress","_t":1795020833405,"id":"4","progress":0.46421511111111113,"total":750,"current":511}
+{"_e":"metro:bundling:progress","_t":1795020833505,"id":"4","progress":0.505760157932638,"total":779,"current":554}
+{"_e":"metro:bundling:progress","_t":1795020833605,"id":"4","progress":0.5653517064572985,"total":790,"current":594}
+{"_e":"metro:bundling:progress","_t":1795020833706,"id":"4","progress":0.6125618671245675,"total":796,"current":623}
+{"_e":"metro:bundling:progress","_t":1795020833807,"id":"4","progress":0.6292115117212459,"total":827,"current":656}
+{"_e":"metro:bundling:progress","_t":1795020833907,"id":"4","progress":0.6445686946022647,"total":842,"current":676}
+{"_e":"metro:bundling:progress","_t":1795020834007,"id":"4","progress":0.6736383054467783,"total":848,"current":696}
+{"_e":"metro:bundling:progress","_t":1795020834107,"id":"4","progress":0.707172805307616,"total":855,"current":719}
+{"_e":"metro:bundling:progress","_t":1795020834207,"id":"4","progress":0.707172805307616,"total":884,"current":739}
+{"_e":"metro:bundling:progress","_t":1795020834308,"id":"4","progress":0.707172805307616,"total":946,"current":777}
+{"_e":"metro:bundling:progress","_t":1795020834408,"id":"4","progress":0.707172805307616,"total":956,"current":793}
+{"_e":"metro:bundling:progress","_t":1795020834508,"id":"4","progress":0.707172805307616,"total":1000,"current":823}
+{"_e":"metro:bundling:progress","_t":1795020834609,"id":"4","progress":0.707172805307616,"total":1008,"current":835}
+{"_e":"metro:bundling:progress","_t":1795020834710,"id":"4","progress":0.707172805307616,"total":1017,"current":854}
+{"_e":"metro:bundling:progress","_t":1795020834810,"id":"4","progress":0.7306139194364966,"total":1019,"current":871}
+{"_e":"metro:bundling:progress","_t":1795020834911,"id":"4","progress":0.7619941731189485,"total":1023,"current":893}
+{"_e":"metro:bundling:progress","_t":1795020835012,"id":"4","progress":0.7749437247506746,"total":1036,"current":912}
+{"_e":"metro:bundling:progress","_t":1795020835112,"id":"4","progress":0.7765088238048027,"total":1069,"current":942}
+{"_e":"metro:bundling:progress","_t":1795020835212,"id":"4","progress":0.8053911900065747,"total":1092,"current":980}
+{"_e":"metro:bundling:progress","_t":1795020835313,"id":"4","progress":0.8273432109584742,"total":1106,"current":1006}
+{"_e":"metro:bundling:progress","_t":1795020835413,"id":"4","progress":0.84082941260801,"total":1108,"current":1016}
+{"_e":"metro:bundling:progress","_t":1795020835514,"id":"4","progress":0.851059645761853,"total":1123,"current":1036}
+{"_e":"metro:bundling:progress","_t":1795020835617,"id":"4","progress":0.8603709623044364,"total":1132,"current":1050}
+{"_e":"metro:bundling:progress","_t":1795020835718,"id":"4","progress":0.8857158521254876,"total":1138,"current":1071}
+{"_e":"metro:bundling:progress","_t":1795020835818,"id":"4","progress":0.8892587720475718,"total":1158,"current":1092}
+{"_e":"metro:bundling:progress","_t":1795020835919,"id":"4","progress":0.9062517468938389,"total":1166,"current":1110}
+{"_e":"metro:bundling:progress","_t":1795020836019,"id":"4","progress":0.9343893174179564,"total":1169,"current":1130}
+{"_e":"metro:bundling:progress","_t":1795020836120,"id":"4","progress":0.9915002510382537,"total":1174,"current":1169}
+{"_e":"metro:bundling:progress","_t":1795020836221,"id":"4","progress":0.9915002510382537,"total":1245,"current":1195}
+{"_e":"metro:bundling:progress","_t":1795020836321,"id":"4","progress":0.9915002510382537,"total":1264,"current":1199}
+{"_e":"metro:bundling:progress","_t":1795020836423,"id":"4","progress":0.9915002510382537,"total":1277,"current":1209}
+{"_e":"metro:bundling:progress","_t":1795020836523,"id":"4","progress":0.9915002510382537,"total":1301,"current":1227}
+{"_e":"metro:bundling:progress","_t":1795020836624,"id":"4","progress":0.9915002510382537,"total":1326,"current":1246}
+{"_e":"metro:bundling:progress","_t":1795020836726,"id":"4","progress":0.9915002510382537,"total":1331,"current":1260}
+{"_e":"metro:bundling:progress","_t":1795020836826,"id":"4","progress":0.9915002510382537,"total":1354,"current":1276}
+{"_e":"metro:bundling:progress","_t":1795020836928,"id":"4","progress":0.9915002510382537,"total":1374,"current":1294}
+{"_e":"metro:bundling:progress","_t":1795020837028,"id":"4","progress":0.9915002510382537,"total":1383,"current":1303}
+{"_e":"metro:bundling:progress","_t":1795020837128,"id":"4","progress":0.9915002510382537,"total":1398,"current":1323}
+{"_e":"metro:bundling:progress","_t":1795020837228,"id":"4","progress":0.9915002510382537,"total":1409,"current":1335}
+{"_e":"metro:bundling:progress","_t":1795020837329,"id":"4","progress":0.9915002510382537,"total":1409,"current":1339}
+{"_e":"metro:bundling:progress","_t":1795020837429,"id":"4","progress":0.9915002510382537,"total":1409,"current":1345}
+{"_e":"metro:bundling:progress","_t":1795020837529,"id":"4","progress":0.9915002510382537,"total":1411,"current":1359}
+{"_e":"metro:bundling:progress","_t":1795020837629,"id":"4","progress":0.9915002510382537,"total":1420,"current":1386}
+{"_e":"metro:bundling:progress","_t":1795020837730,"id":"4","progress":0.9915002510382537,"total":1434,"current":1400}
+{"_e":"metro:bundling:progress","_t":1795020837831,"id":"4","progress":0.9915002510382537,"total":1450,"current":1419}
+{"_e":"metro:bundling:progress","_t":1795020837931,"id":"4","progress":0.9915002510382537,"total":1495,"current":1472}
+{"_e":"metro:bundling:progress","_t":1795020838031,"id":"4","progress":0.9915002510382537,"total":1541,"current":1525}
+{"_e":"metro:bundling:progress","_t":1795020838132,"id":"4","progress":0.999,"total":1543,"current":1543}
+{"_e":"metro:bundling:done","_t":1795020838250,"id":"4","total":1543,"ms":7169.82435}
+{"_e":"metro:client_log","_t":1795020839642,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:client_log","_t":1795020886375,"level":"log","data":["Connected to Socket server, joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795020888619,"level":"log","data":["Connected to Socket server, joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795020934962,"level":"error","data":["Cannot update a component (`AppProvider`) while rendering a different component (`AuctionRoomScreen`). To locate the bad setState() call inside `AuctionRoomScreen`, follow the stack trace as described in https://react.dev/link/setstate-in-render NamelessError@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1468:3\ncaptureCurrentStack@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1473:12\naddErrorStacks@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1455:21\nconsole[level]@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1420:58\nscheduleUpdateOnFiber@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:13699:193\ndispatchSetStateInternal@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10796:58\ndispatchSetState@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10768:31\naddActivityNotice@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:78668:20\nAuctionRoomScreen/</timer</<@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:110310:30\nbasicStateReducer@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10000:45\nupdateReducerImpl@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10081:71\nupdateReducer@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10029:14\nuseState@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:19475:18\nexports.useState@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:4618:34\nAuctionRoomScreen@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:110263:57\nreact_stack_bottom_frame@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:18950:20\nrenderWithHooks@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:9823:40\nupdateFunctionComponent@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:11212:19\nbeginWork@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:11781:18\nrunWithFiberInDEV@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:6300:127\nperformUnitOfWork@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14208:95\nworkLoopSync@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14103:57\nrenderRootSync@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14088:9\nperformWorkOnRoot@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:13725:184\nperformWorkOnRootViaSchedulerTask@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14863:24\nperformWorkUntilDeadline@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:20802:56\n \nSceneView@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33619:93\nrender@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33405:59\nuseDescriptors/descriptors<@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33437:29\nuseDescriptors@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33434:32\nuseNavigationBuilder@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33072:46\nStackNavigator@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:64709:57\nApp@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:25986:47\nWithDevTools@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:25471:45"]}
+{"_e":"metro:bundling:started","_t":1795021311119,"id":"8","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795021311119,"id":"8","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795021311160,"id":"8","total":1,"ms":40.29171}
+{"_e":"metro:client_log","_t":1795021312354,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:bundling:started","_t":1795021328532,"id":"9","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795021328532,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795021328533,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795021328631,"id":"9","total":1,"ms":98.797228}
+{"_e":"metro:client_log","_t":1795021328932,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795021328932,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1795021359524,"level":"log","data":["Connected to Socket server, joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795021359568,"level":"log","data":["Connected to Socket server, joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795021412221,"level":"error","data":["Cannot update a component (`AppProvider`) while rendering a different component (`AuctionRoomScreen`). To locate the bad setState() call inside `AuctionRoomScreen`, follow the stack trace as described in https://react.dev/link/setstate-in-render NamelessError@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1468:3\ncaptureCurrentStack@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1473:12\naddErrorStacks@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1455:21\nconsole[level]@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1420:58\nscheduleUpdateOnFiber@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:13699:193\ndispatchSetStateInternal@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10796:58\ndispatchSetState@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10768:31\naddActivityNotice@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:78668:20\nAuctionRoomScreen/</timer</<@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:110304:30\nbasicStateReducer@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10000:45\nupdateReducerImpl@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10081:71\nupdateReducer@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10029:14\nuseState@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:19475:18\nexports.useState@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:4618:34\nAuctionRoomScreen@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:110259:57\nreact_stack_bottom_frame@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:18950:20\nrenderWithHooks@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:9823:40\nupdateFunctionComponent@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:11212:19\nbeginWork@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:11781:18\nrunWithFiberInDEV@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:6300:127\nperformUnitOfWork@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14208:95\nworkLoopSync@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14103:57\nrenderRootSync@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14088:9\nperformWorkOnRoot@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:13725:184\nperformWorkOnRootViaSchedulerTask@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14863:24\nperformWorkUntilDeadline@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:20802:56\n \nSceneView@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33619:93\nrender@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33405:59\nuseDescriptors/descriptors<@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33437:29\nuseDescriptors@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33434:32\nuseNavigationBuilder@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33072:46\nStackNavigator@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:64709:57\nApp@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:25986:47\nWithDevTools@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:25471:45"]}
+{"_e":"metro:bundling:started","_t":1795021780915,"id":"e","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795021780915,"id":"e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795021780916,"id":"e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795021780980,"id":"e","total":1,"ms":64.796393}
+{"_e":"metro:client_log","_t":1795021781865,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:bundling:started","_t":1795021807865,"id":"f","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795021807866,"id":"f","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795021807866,"id":"f","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795021807943,"id":"f","total":1,"ms":77.604484}
+{"_e":"metro:client_log","_t":1795021808377,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795021808378,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1795021815019,"level":"log","data":["Connected to Socket server as:","User_yNvl","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795021815446,"level":"log","data":["Connected to Socket server as:","User_6qZF","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795021892355,"level":"error","data":["Cannot update a component (`AppProvider`) while rendering a different component (`AuctionRoomScreen`). To locate the bad setState() call inside `AuctionRoomScreen`, follow the stack trace as described in https://react.dev/link/setstate-in-render NamelessError@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1468:3\ncaptureCurrentStack@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1473:12\naddErrorStacks@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1455:21\nconsole[level]@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:1420:58\nscheduleUpdateOnFiber@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:13699:193\ndispatchSetStateInternal@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10796:58\ndispatchSetState@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10768:31\naddActivityNotice@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:78668:20\nAuctionRoomScreen/</timer</<@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:110311:30\nbasicStateReducer@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10000:45\nupdateReducerImpl@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10081:71\nupdateReducer@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:10029:14\nuseState@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:19475:18\nexports.useState@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:4618:34\nAuctionRoomScreen@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:110259:57\nreact_stack_bottom_frame@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:18950:20\nrenderWithHooks@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:9823:40\nupdateFunctionComponent@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:11212:19\nbeginWork@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:11781:18\nrunWithFiberInDEV@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:6300:127\nperformUnitOfWork@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14208:95\nworkLoopSync@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14103:57\nrenderRootSync@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14088:9\nperformWorkOnRoot@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:13725:184\nperformWorkOnRootViaSchedulerTask@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:14863:24\nperformWorkUntilDeadline@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:20802:56\n \nSceneView@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33619:93\nrender@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33405:59\nuseDescriptors/descriptors<@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33437:29\nuseDescriptors@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33434:32\nuseNavigationBuilder@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:33072:46\nStackNavigator@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:64709:57\nApp@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:25986:47\nWithDevTools@http://localhost:8081/node_modules/expo/AppEntry.bundle?platform=web&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.routerRoot=app&unstable_transformProfile=hermes-stable:25471:45"]}
+{"_e":"metro:client_log","_t":1795021894363,"level":"error","data":["Cannot update a component (`AppProvider`) while rendering a different component (`AuctionRoomScreen`). To locate the bad setState() call inside `AuctionRoomScreen`, follow the stack trace as described in https://react.dev/link/setstate-in-render"]}
+{"_e":"root:init","_t":1795022030750,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795022030751,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795022030752,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795022030900,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795022031109,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795022031175,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795022031271,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795022033104,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795022033968,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795022033968,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795022033971,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795022034071,"id":"1","progress":0.1715131109070503,"total":198,"current":82}
+{"_e":"metro:bundling:progress","_t":1795022034171,"id":"1","progress":0.49379108838568303,"total":444,"current":312}
+{"_e":"metro:bundling:progress","_t":1795022034271,"id":"1","progress":0.8435208865020798,"total":613,"current":563}
+{"_e":"metro:bundling:progress","_t":1795022034372,"id":"1","progress":0.9971367230154103,"total":698,"current":697}
+{"_e":"metro:bundling:progress","_t":1795022034512,"id":"1","progress":0.999,"total":698,"current":698}
+{"_e":"metro:bundling:done","_t":1795022034561,"id":"1","total":698,"ms":592.676929}
+{"_e":"metro:client_log","_t":1795022034861,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795022034861,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795022039861,"id":"4","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795022039861,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795022039863,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795022039963,"id":"4","progress":0.19008393098741636,"total":289,"current":126}
+{"_e":"metro:bundling:progress","_t":1795022040064,"id":"4","progress":0.3165149339837413,"total":647,"current":364}
+{"_e":"metro:bundling:progress","_t":1795022040166,"id":"4","progress":0.6570368655716078,"total":813,"current":659}
+{"_e":"metro:bundling:progress","_t":1795022040266,"id":"4","progress":0.7087909512724774,"total":1012,"current":852}
+{"_e":"metro:bundling:progress","_t":1795022040366,"id":"4","progress":0.9310846716685168,"total":1169,"current":1128}
+{"_e":"metro:bundling:progress","_t":1795022040466,"id":"4","progress":0.9587407823955693,"total":1535,"current":1503}
+{"_e":"metro:bundling:done","_t":1795022040519,"id":"4","total":1535,"ms":657.218351}
+{"_e":"metro:client_log","_t":1795022041582,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:client_log","_t":1795022049059,"level":"log","data":["Connected to Socket server as:","User_j7VW","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795022049792,"level":"log","data":["Connected to Socket server as:","User_SpTZ","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"root:init","_t":1795022327571,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795022327571,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795022327573,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795022327675,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795022327808,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795022327848,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795022327949,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795022329809,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795022330653,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795022330653,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795022330656,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795022330755,"id":"1","progress":0.17260612849774792,"total":207,"current":86}
+{"_e":"metro:bundling:progress","_t":1795022330855,"id":"1","progress":0.4982698961937717,"total":442,"current":312}
+{"_e":"metro:bundling:progress","_t":1795022330956,"id":"1","progress":0.612476370510397,"total":552,"current":432}
+{"_e":"metro:bundling:progress","_t":1795022331068,"id":"1","progress":0.9165113092697829,"total":633,"current":606}
+{"_e":"metro:bundling:progress","_t":1795022331169,"id":"1","progress":0.9971367230154103,"total":698,"current":697}
+{"_e":"metro:bundling:done","_t":1795022331230,"id":"1","total":698,"ms":577.155739}
+{"_e":"metro:client_log","_t":1795022331507,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795022331508,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795022337773,"id":"4","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795022337773,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795022337775,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795022337874,"id":"4","progress":0.22639177939646205,"total":372,"current":177}
+{"_e":"metro:bundling:progress","_t":1795022337974,"id":"4","progress":0.386320625133543,"total":724,"current":450}
+{"_e":"metro:bundling:progress","_t":1795022338074,"id":"4","progress":0.7212635232385752,"total":962,"current":817}
+{"_e":"metro:bundling:progress","_t":1795022338175,"id":"4","progress":0.8815669648431909,"total":1146,"current":1076}
+{"_e":"metro:bundling:progress","_t":1795022338275,"id":"4","progress":0.9470478630023301,"total":1416,"current":1378}
+{"_e":"metro:bundling:done","_t":1795022338354,"id":"4","total":1416,"ms":580.840326}
+{"_e":"metro:client_log","_t":1795022339478,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:client_log","_t":1795022353511,"level":"log","data":["Connected to Socket server as:","User_Chl_","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795022354388,"level":"log","data":["Connected to Socket server as:","User_Dve2","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795022668899,"level":"log","data":["Connected to Socket server as:","User_gyhk","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"root:init","_t":1795023277318,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795023277319,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795023277320,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795023277425,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795023277563,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795023277603,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795023277701,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795023279492,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795023280429,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795023280429,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795023280432,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795023280532,"id":"1","progress":0.1877777777777778,"total":210,"current":91}
+{"_e":"metro:bundling:progress","_t":1795023280632,"id":"1","progress":0.5625,"total":480,"current":360}
+{"_e":"metro:bundling:progress","_t":1795023280732,"id":"1","progress":0.9061575443786981,"total":624,"current":594}
+{"_e":"metro:bundling:progress","_t":1795023280832,"id":"1","progress":0.9971367230154103,"total":698,"current":697}
+{"_e":"metro:bundling:progress","_t":1795023280943,"id":"1","progress":0.999,"total":698,"current":698}
+{"_e":"metro:bundling:done","_t":1795023280985,"id":"1","total":698,"ms":555.915779}
+{"_e":"metro:client_log","_t":1795023281265,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795023281266,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795023285468,"id":"4","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795023285469,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795023285470,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795023285570,"id":"4","progress":0.23240564886630097,"total":307,"current":148}
+{"_e":"metro:bundling:progress","_t":1795023285670,"id":"4","progress":0.3329065758634019,"total":669,"current":386}
+{"_e":"metro:bundling:progress","_t":1795023285772,"id":"4","progress":0.6759202609319354,"total":849,"current":698}
+{"_e":"metro:bundling:progress","_t":1795023285872,"id":"4","progress":0.787180727663422,"total":1073,"current":952}
+{"_e":"metro:bundling:progress","_t":1795023285972,"id":"4","progress":0.9367303511219823,"total":1213,"current":1174}
+{"_e":"metro:bundling:progress","_t":1795023286073,"id":"4","progress":0.999,"total":1543,"current":1543}
+{"_e":"metro:bundling:done","_t":1795023286110,"id":"4","total":1543,"ms":641.971131}
+{"_e":"metro:client_log","_t":1795023287297,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:client_log","_t":1795023299246,"level":"log","data":["Connected to Socket server as:","User_paf7","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795023299297,"level":"log","data":["Connected to Socket server as:","User_0x7p","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"root:init","_t":1795023951310,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795023951310,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795023951312,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795023951419,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795023951560,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795023951603,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795023951716,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795023953515,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795023953797,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795023953797,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795023953800,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795023953900,"id":"1","progress":0.23000832986255726,"total":294,"current":141}
+{"_e":"metro:bundling:progress","_t":1795023954000,"id":"1","progress":0.5930439339680321,"total":535,"current":412}
+{"_e":"metro:bundling:progress","_t":1795023954100,"id":"1","progress":0.9601747258554632,"total":696,"current":682}
+{"_e":"metro:bundling:progress","_t":1795023954206,"id":"1","progress":0.999,"total":727,"current":727}
+{"_e":"metro:bundling:done","_t":1795023954230,"id":"1","total":727,"ms":433.282868}
+{"_e":"metro:client_log","_t":1795023954415,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795023954415,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795023961425,"id":"3","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795023961425,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795023961446,"id":"3","total":1,"ms":20.662479}
+{"_e":"metro:client_log","_t":1795023961626,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795023961626,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795024040711,"id":"5","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024040713,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795024040736,"id":"5","total":1,"ms":23.418563}
+{"_e":"metro:client_log","_t":1795024040987,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795024040987,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795024065293,"id":"8","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024065293,"id":"8","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024065295,"id":"8","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024065399,"id":"8","progress":0.12641975308641976,"total":270,"current":96}
+{"_e":"metro:bundling:progress","_t":1795024065499,"id":"8","progress":0.31563647228528535,"total":639,"current":359}
+{"_e":"metro:bundling:progress","_t":1795024065601,"id":"8","progress":0.6655124653739611,"total":798,"current":651}
+{"_e":"metro:bundling:progress","_t":1795024065705,"id":"8","progress":0.7370688360074514,"total":1032,"current":886}
+{"_e":"metro:bundling:progress","_t":1795024065805,"id":"8","progress":0.9383768174157074,"total":1214,"current":1176}
+{"_e":"metro:bundling:progress","_t":1795024065912,"id":"8","progress":0.999,"total":1543,"current":1543}
+{"_e":"metro:bundling:done","_t":1795024065954,"id":"8","total":1543,"ms":661.274479}
+{"_e":"metro:client_log","_t":1795024067093,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:bundling:started","_t":1795024313226,"id":"b","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"root:init","_t":1795024357798,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795024357798,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795024357799,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795024357903,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795024358038,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795024358078,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795024358182,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795024359831,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795024360655,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024360656,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024360659,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024360758,"id":"1","progress":0.201738006320023,"total":236,"current":106}
+{"_e":"metro:bundling:progress","_t":1795024360859,"id":"1","progress":0.5807796055954416,"total":517,"current":394}
+{"_e":"metro:bundling:progress","_t":1795024360970,"id":"1","progress":0.8441997224048505,"total":702,"current":645}
+{"_e":"metro:bundling:done","_t":1795024361019,"id":"1","total":702,"ms":363.594605}
+{"_e":"metro:client_log","_t":1795024361343,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795024361343,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"root:init","_t":1795024374360,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795024374360,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795024374362,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795024374462,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795024374593,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795024374633,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795024374740,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795024376521,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795024376797,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024376797,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024376800,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024376902,"id":"1","progress":0.24837398805292363,"total":307,"current":153}
+{"_e":"metro:bundling:progress","_t":1795024377002,"id":"1","progress":0.5837958372996136,"total":551,"current":421}
+{"_e":"metro:bundling:progress","_t":1795024377102,"id":"1","progress":0.8953924085073692,"total":707,"current":669}
+{"_e":"metro:bundling:done","_t":1795024377141,"id":"1","total":707,"ms":344.218622}
+{"_e":"metro:client_log","_t":1795024377344,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795024377344,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795024391373,"id":"4","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024391373,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795024391392,"id":"4","total":1,"ms":18.868727}
+{"_e":"metro:client_log","_t":1795024391648,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795024391648,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795024397822,"id":"7","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024397822,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024397824,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024397924,"id":"7","progress":0.1618990931690067,"total":338,"current":136}
+{"_e":"metro:bundling:progress","_t":1795024398024,"id":"7","progress":0.32891143274240475,"total":687,"current":394}
+{"_e":"metro:bundling:progress","_t":1795024398124,"id":"7","progress":0.6518498305482544,"total":841,"current":679}
+{"_e":"metro:bundling:progress","_t":1795024398225,"id":"7","progress":0.7783526945584768,"total":1070,"current":944}
+{"_e":"metro:bundling:progress","_t":1795024398325,"id":"7","progress":0.9191782920162127,"total":1236,"current":1185}
+{"_e":"metro:bundling:done","_t":1795024398461,"id":"7","total":1236,"ms":638.332868}
+{"_e":"metro:client_log","_t":1795024399647,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"root:init","_t":1795024793795,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795024793795,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795024793796,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795024793900,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795024794031,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795024794070,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795024794171,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795024795986,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795024796805,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024796805,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024796808,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024796908,"id":"1","progress":0.22718141322386234,"total":214,"current":102}
+{"_e":"metro:bundling:progress","_t":1795024797015,"id":"1","progress":0.5747612201731774,"total":492,"current":373}
+{"_e":"metro:bundling:progress","_t":1795024797115,"id":"1","progress":0.7835637221380893,"total":601,"current":532}
+{"_e":"metro:bundling:progress","_t":1795024797217,"id":"1","progress":0.9971367230154103,"total":698,"current":697}
+{"_e":"metro:bundling:done","_t":1795024797325,"id":"1","total":698,"ms":519.555132}
+{"_e":"metro:client_log","_t":1795024797590,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795024797590,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795024831412,"id":"4","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024831412,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024831415,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795024831515,"id":"4","progress":0.09616481928881011,"total":287,"current":89}
+{"_e":"metro:bundling:progress","_t":1795024831615,"id":"4","progress":0.32283057851239677,"total":572,"current":325}
+{"_e":"metro:bundling:progress","_t":1795024831715,"id":"4","progress":0.6674499926123452,"total":754,"current":616}
+{"_e":"metro:bundling:progress","_t":1795024831815,"id":"4","progress":0.7109134621622134,"total":1001,"current":844}
+{"_e":"metro:bundling:progress","_t":1795024831923,"id":"4","progress":0.88320632658096,"total":1146,"current":1077}
+{"_e":"metro:bundling:progress","_t":1795024832023,"id":"4","progress":0.9538106541018646,"total":1455,"current":1421}
+{"_e":"metro:bundling:done","_t":1795024832099,"id":"4","total":1455,"ms":687.207549}
+{"_e":"metro:client_log","_t":1795024833090,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:bundling:started","_t":1795024880971,"id":"7","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024880971,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795024880993,"id":"7","total":1,"ms":22.493375}
+{"_e":"metro:client_log","_t":1795024881190,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795024881190,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795024887113,"id":"a","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024887113,"id":"a","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795024887151,"id":"a","total":1,"ms":38.044096}
+{"_e":"metro:client_log","_t":1795024888397,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"metro:bundling:started","_t":1795024898037,"id":"b","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:started","_t":1795024920867,"id":"e","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:started","_t":1795024942667,"id":"f","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795024942667,"id":"f","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795024942706,"id":"f","total":1,"ms":39.274374}
+{"_e":"metro:client_log","_t":1795024943811,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"root:init","_t":1795025026903,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795025026904,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795025026905,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795025027007,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795025027143,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795025027185,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795025027289,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795025029116,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795025029947,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795025029947,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795025029955,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795025030055,"id":"1","progress":0.17122473246135553,"total":174,"current":72}
+{"_e":"metro:bundling:progress","_t":1795025030159,"id":"1","progress":0.472842683781838,"total":461,"current":317}
+{"_e":"metro:bundling:progress","_t":1795025030259,"id":"1","progress":0.8680220670498823,"total":644,"current":600}
+{"_e":"metro:bundling:done","_t":1795025030347,"id":"1","total":644,"ms":400.167926}
+{"_e":"metro:client_log","_t":1795025030663,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795025030665,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795025034217,"id":"4","platform":"ios","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795025034217,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795025034219,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795025034319,"id":"4","progress":0.2296560032535048,"total":361,"current":173}
+{"_e":"metro:bundling:progress","_t":1795025034419,"id":"4","progress":0.3521126469811071,"total":696,"current":413}
+{"_e":"metro:bundling:progress","_t":1795025034519,"id":"4","progress":0.7125741450427819,"total":879,"current":742}
+{"_e":"metro:bundling:progress","_t":1795025034619,"id":"4","progress":0.8182024793388429,"total":1100,"current":995}
+{"_e":"metro:bundling:progress","_t":1795025034719,"id":"4","progress":0.8949670591990362,"total":1334,"current":1262}
+{"_e":"metro:bundling:done","_t":1795025034841,"id":"4","total":1334,"ms":623.137171}
+{"_e":"metro:client_log","_t":1795025036062,"level":"warn","data":["SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/AppAndFlow/react-native-safe-area-context"]}
+{"_e":"root:init","_t":1795025644712,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795025644713,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795025644714,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795025644811,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795025644940,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795025644980,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795025645079,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795025646891,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795025647707,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795025647707,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795025647711,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795025647811,"id":"1","progress":0.1921561268530681,"total":219,"current":96}
+{"_e":"metro:bundling:progress","_t":1795025647917,"id":"1","progress":0.5837314666896131,"total":517,"current":395}
+{"_e":"metro:bundling:progress","_t":1795025648017,"id":"1","progress":0.9228785066407885,"total":661,"current":635}
+{"_e":"metro:bundling:done","_t":1795025648080,"id":"1","total":661,"ms":373.704335}
+{"_e":"metro:client_log","_t":1795025648384,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795025648385,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"root:init","_t":1795025763391,"format":"v0-jsonl","version":"57.0.24"}
+{"_e":"env:mode","_t":1795025763391,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1795025763392,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://auction-backend-vgus.onrender.com"}}
+{"_e":"devserver:start","_t":1795025763495,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1795025763627,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"metro:server_log","_t":1795025763666,"level":"warn","data":["Failed to download the latest version of React Native DevTools. Using a fallback version instead. Connect to the internet or check your network settings."]}
+{"_e":"expo:dev-tools-plugin:load","_t":1795025763767,"plugins":[]}
+{"_e":"metro:instantiate","_t":1795025765592,"atlas":false,"workers":3,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1795025766416,"id":"1","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795025766416,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795025766419,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1795025766519,"id":"1","progress":0.20134779750164367,"total":234,"current":105}
+{"_e":"metro:bundling:progress","_t":1795025766621,"id":"1","progress":0.5837314666896131,"total":517,"current":395}
+{"_e":"metro:bundling:progress","_t":1795025766720,"id":"1","progress":0.913021284203395,"total":652,"current":623}
+{"_e":"metro:bundling:done","_t":1795025766782,"id":"1","total":652,"ms":366.300277}
+{"_e":"metro:client_log","_t":1795025767049,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795025767049,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795025790401,"id":"4","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795025790401,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795025790418,"id":"4","total":1,"ms":17.177507}
+{"_e":"metro:client_log","_t":1795025790617,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795025790617,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1795025805206,"level":"log","data":["Connected to Socket server as:","User_8Jfx","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795025814821,"level":"log","data":["Connected to Socket server as:","User_apba","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:bundling:started","_t":1795025854021,"id":"9","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795025854021,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795025854038,"id":"9","total":1,"ms":17.800769}
+{"_e":"metro:client_log","_t":1795025854249,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795025854249,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1795025873947,"level":"log","data":["Connected to Socket server as:","User_OT1k","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795025874351,"level":"log","data":["Connected to Socket server as:","User_yVLX","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795026139449,"level":"log","data":["Connected to Socket server as:","User_PHZw","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795026139470,"level":"log","data":["Connected to Socket server as:","User__Y_T","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795026139794,"level":"log","data":["Connected to Socket server as:","User_oz_s","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:bundling:started","_t":1795026167382,"id":"e","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795026167383,"id":"e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795026167400,"id":"e","total":1,"ms":16.790474}
+{"_e":"metro:client_log","_t":1795026167577,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795026167577,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795026177100,"id":"h","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795026177100,"id":"h","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795026177119,"id":"h","total":1,"ms":19.03438}
+{"_e":"metro:client_log","_t":1795026177288,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795026177288,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1795026188917,"level":"log","data":["Connected to Socket server as:","User_YVyB","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795026189511,"level":"log","data":["Connected to Socket server as:","User_TKgE","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:bundling:started","_t":1795026301883,"id":"m","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795026301883,"id":"m","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795026301900,"id":"m","total":1,"ms":17.218636}
+{"_e":"metro:client_log","_t":1795026302039,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795026302039,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795026305150,"id":"p","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795026305150,"id":"p","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795026305166,"id":"p","total":1,"ms":16.525849}
+{"_e":"metro:client_log","_t":1795026305302,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795026305303,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1795026315387,"level":"log","data":["Connected to Socket server as:","User__iEe","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795026315961,"level":"log","data":["Connected to Socket server as:","User_XM29","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795026439411,"level":"log","data":["Connected to Socket server as:","User_aXuP","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795026529059,"level":"log","data":["Connected to Socket server as:","User_2dhr","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:bundling:started","_t":1795026544274,"id":"u","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795026544274,"id":"u","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795026544290,"id":"u","total":1,"ms":16.232684}
+{"_e":"metro:client_log","_t":1795026544470,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795026544471,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1795026546096,"id":"x","platform":"web","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1795026546097,"id":"x","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1795026546114,"id":"x","total":1,"ms":17.534501}
+{"_e":"metro:client_log","_t":1795026546298,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1795026546298,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1795026556408,"level":"log","data":["Connected to Socket server as:","User_tBxW","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}
+{"_e":"metro:client_log","_t":1795026556891,"level":"log","data":["Connected to Socket server as:","User_1zEn","joining room:","a6cbf266-1c7c-4f8e-922a-c2156e117446"]}

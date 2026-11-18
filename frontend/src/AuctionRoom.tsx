@@ -12,11 +12,10 @@ import {
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../App';
 import { AppContext } from './context/AppContext';
-import { io } from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 
-// 連線到你的後端伺服器 (若用實機測試，請將 localhost 改為電腦區網 IP)
+// 💡 修正：移除多餘的括號與重複網址
 const SOCKET_URL = 'https://auction-backend-vgus.onrender.com';
-const socket = io(SOCKET_URL);
 
 type AuctionRoomRouteProp = RouteProp<RootStackParamList, 'AuctionRoom'>;
 
@@ -34,64 +33,69 @@ export default function AuctionRoomScreen() {
 
   const { products, addActivityNotice } = useContext(AppContext);
   
-  // 🔍 精準透過 auctionId 尋找對應商品，若找不到則預設為第一個商品
   const product = products.find((p) => p.id === auctionId) || products[0];
 
   const [currentBid, setCurrentBid] = useState<number>(product ? product.price : 100);
   const [customBid, setCustomBid] = useState<string>('');
   
-  // ⏱️ 60 秒倒數計時
   const [timeLeft, setTimeLeft] = useState<number>(30);
   
-  const [bids, setBids] = useState<BidRecord[]>([
-    { id: '1', bidderName: 'John Doe', amount: product ? product.price : 100, time: '2 mins ago' },
-  ]);
+  const [bids, setBids] = useState<BidRecord[]>([]);
 
-  // 1. Socket.io 連線與房間加入
+  const [socket, setSocket] = useState<Socket | null>(null);
+  const [myTag, setMyTag] = useState<string>('');
+
+  // 1. Socket.io Connection and Room Management (💡 修正：只依賴 auctionId，避免重複斷線重連)
   useEffect(() => {
-    const targetId = auctionId || product?.id || '1';
-    socket.emit('join_room', targetId);
+    const newSocket = io(SOCKET_URL, {
+      transports: ['websocket'],
+    });
+    setSocket(newSocket);
 
-    // 監聽來自後端的即時出價廣播
-    socket.on('new_bid', (newBid: BidRecord) => {
-      setBids((prevBids) => [newBid, ...prevBids]);
-      setCurrentBid(newBid.amount);
+    const targetId = auctionId || product?.id || '1';
+
+    newSocket.on('connect', () => {
+      const shortId = newSocket.id ? newSocket.id.substring(0, 4) : 'Guest';
+      const generatedTag = `User_${shortId}`;
+      setMyTag(generatedTag);
+      console.log('Connected to Socket server as:', generatedTag, 'joining room:', targetId);
+      newSocket.emit('join_room', targetId);
+    });
+
+    // Listen for real-time broadcast bids from backend
+    newSocket.on('new_bid', (newBid: any) => {
+      const resolvedName = newBid.bidderName || newBid.bidder_name || 'Unknown User';
+
+      const formattedBid: BidRecord = {
+        id: newBid.id || Date.now().toString(),
+        bidderName: resolvedName,
+        amount: Number(newBid.amount),
+        time: newBid.time || 'Just now',
+      };
+
+      setBids((prevBids) => {
+        if (prevBids.some((b) => b.id === formattedBid.id)) return prevBids;
+        return [formattedBid, ...prevBids];
+      });
+      setCurrentBid(formattedBid.amount);
+    });
+
+    // Listen for bid rejection/errors from backend
+    newSocket.on('bid_error', (err: { message: string }) => {
+      Alert.alert('Bid Rejected', err.message);
     });
 
     return () => {
-      socket.off('new_bid');
+      newSocket.disconnect();
     };
-  }, [auctionId, product]);
+  }, [auctionId]);
 
-  // 2. 倒數計時器與自動結算邏輯
+  // 2. Countdown Timer (💡 修正：將依賴改為空陣列或獨立狀態，避免每次出價或更新金額時重置倒數計時)
   useEffect(() => {
-    if (timeLeft <= 0) return;
-
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          
-          const hasUserBid = bids.some((b) => b.bidderName.includes('You'));
-          const finalStatus = hasUserBid ? 'SUCCESS' : 'FAILED';
-
-          // 寫入全局 Activity 通知
-          addActivityNotice({
-            id: Date.now().toString(),
-            productTitle: product ? product.title : 'Auction Item',
-            finalPrice: currentBid,
-            status: finalStatus,
-            timestamp: 'Just now',
-          });
-
-          Alert.alert(
-            'Auction Ended!',
-            hasUserBid
-              ? `Congratulations! You won the auction for "${product?.title}" at $${currentBid}!`
-              : `The auction has ended. Winning bid was $${currentBid}.`,
-            [{ text: 'View Activity', onPress: () => navigation.goBack() }]
-          );
-
           return 0;
         }
         return prev - 1;
@@ -99,9 +103,35 @@ export default function AuctionRoomScreen() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, currentBid, bids, product, navigation, addActivityNotice]);
+  }, []);
 
-  // 3. 處理出價動作
+  // 3. Handle Auction End Trigger (獨立處理結束結算與跳轉)
+  useEffect(() => {
+    if (timeLeft === 0) {
+      const hasUserBid = bids.some((b) => b.bidderName === myTag);
+      const finalStatus = hasUserBid ? 'SUCCESS' : 'FAILED';
+
+      setTimeout(() => {
+        addActivityNotice({
+          id: Date.now().toString(),
+          productTitle: product ? product.title : 'Auction Item',
+          finalPrice: currentBid,
+          status: finalStatus,
+          timestamp: 'Just now',
+        });
+
+        Alert.alert(
+          'Auction Ended!',
+          hasUserBid
+            ? `Congratulations! You won the auction for "${product?.title}" at $${currentBid}!`
+            : `The auction has ended. Winning bid was $${currentBid}.`,
+          [{ text: 'View Activity', onPress: () => navigation.goBack() }]
+        );
+      }, 0);
+    }
+  }, [timeLeft]);
+
+  // 4. Handle Bid Action
   const handlePlaceBid = (amount: number) => {
     if (timeLeft === 0) {
       Alert.alert('Auction Closed', 'This auction has already ended. You can no longer place bids.');
@@ -109,28 +139,22 @@ export default function AuctionRoomScreen() {
     }
 
     if (amount <= currentBid) {
-      Alert.alert('Invalid Bid', 'Your bid must be higher than the current highest bid.');
+      Alert.alert('Invalid Bid', `Your bid must be higher than the current highest bid ($${currentBid}).`);
+      return;
+    }
+
+    if (!socket) {
+      Alert.alert('Connection Error', 'Socket is not connected.');
       return;
     }
 
     const targetId = auctionId || product?.id || '1';
 
-    // 透過 Socket 發送出價給後端
     socket.emit('place_bid', {
       productId: targetId,
-      bidderName: 'You (Alex)',
       amount: amount,
     });
 
-    // 同步在本地畫面直接推入一筆，確保手感即時響應
-    const myNewBid: BidRecord = {
-      id: Date.now().toString(),
-      bidderName: 'You (Alex)',
-      amount: amount,
-      time: 'Just now',
-    };
-    setBids((prev) => [myNewBid, ...prev]);
-    setCurrentBid(amount);
     setCustomBid('');
   };
 
@@ -142,7 +166,6 @@ export default function AuctionRoomScreen() {
 
   return (
     <ScrollView style={styles.container}>
-      {/* 🖼️ 恢復商品圖片顯示 */}
       {product?.image ? (
         <Image source={{ uri: product.image }} style={styles.productImage} />
       ) : null}
@@ -150,7 +173,8 @@ export default function AuctionRoomScreen() {
       <Text style={styles.title}>{title || product?.title || 'Auction Item'}</Text>
       <Text style={styles.description}>{product?.description}</Text>
       
-      {/* 倒數計時顯示 */}
+      {myTag ? <Text style={styles.sessionBadge}>Your Session: {myTag}</Text> : null}
+      
       <View style={styles.timerContainer}>
         <Text style={styles.timerText}>
           {timeLeft === 0 ? 'AUCTION ENDED' : `Time Left: ${formatTime(timeLeft)}`}
@@ -162,7 +186,6 @@ export default function AuctionRoomScreen() {
         <Text style={styles.price}>${currentBid}</Text>
       </View>
 
-      {/* 快速出價按鈕 */}
       <View style={styles.quickBidRow}>
         {[10, 50, 100].map((inc) => (
           <TouchableOpacity
@@ -178,7 +201,6 @@ export default function AuctionRoomScreen() {
         ))}
       </View>
 
-      {/* 自訂出價區塊 */}
       <View style={styles.customBidRow}>
         <TextInput
           style={styles.input}
@@ -206,15 +228,21 @@ export default function AuctionRoomScreen() {
         </TouchableOpacity>
       </View>
 
-      {/* 出價歷史紀錄 */}
       <Text style={styles.historyTitle}>Live Bid History</Text>
-      {bids.map((bid) => (
-        <View key={bid.id} style={styles.bidItem}>
-          <Text style={styles.bidder}>{bid.bidderName}</Text>
-          <Text style={styles.bidAmount}>${bid.amount}</Text>
-          <Text style={styles.bidTime}>{bid.time}</Text>
-        </View>
-      ))}
+      {bids.map((bid) => {
+        const isMe = bid.bidderName === myTag;
+        const displayName = bid.bidderName || 'Unknown User';
+
+        return (
+          <View key={bid.id} style={styles.bidItem}>
+            <Text style={[styles.bidder, isMe && styles.myBidderText]}>
+              {displayName} {isMe ? '(You)' : ''}
+            </Text>
+            <Text style={styles.bidAmount}>${bid.amount}</Text>
+            <Text style={styles.bidTime}>{bid.time}</Text>
+          </View>
+        );
+      })}
     </ScrollView>
   );
 }
@@ -223,7 +251,18 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, backgroundColor: '#fff' },
   productImage: { width: '100%', height: 220, borderRadius: 12, marginBottom: 15, resizeMode: 'cover' },
   title: { fontSize: 22, fontWeight: 'bold', marginBottom: 5 },
-  description: { fontSize: 14, color: '#666', marginBottom: 15 },
+  description: { fontSize: 14, color: '#666', marginBottom: 10 },
+  sessionBadge: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#e8f0fe',
+    color: '#007AFF',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+    fontSize: 12,
+    fontWeight: '600',
+    marginBottom: 15,
+  },
   timerContainer: { backgroundColor: '#FF3B30', padding: 10, borderRadius: 8, alignItems: 'center', marginBottom: 15 },
   timerText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
   priceContainer: { marginBottom: 20, alignItems: 'center' },
@@ -238,8 +277,9 @@ const styles = StyleSheet.create({
   submitBtnText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
   disabledBtn: { backgroundColor: '#d1d1d6' },
   historyTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 10 },
-  bidItem: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#eee' },
-  bidder: { fontSize: 14, fontWeight: '600' },
-  bidAmount: { fontSize: 14, fontWeight: 'bold', color: '#007AFF' },
+  bidItem: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#eee', alignItems: 'center' },
+  bidder: { fontSize: 14, fontWeight: '600', color: '#333' },
+  myBidderText: { color: '#007AFF', fontWeight: 'bold' },
+  bidAmount: { fontSize: 14, fontWeight: 'bold', color: '#27ae60' },
   bidTime: { fontSize: 12, color: '#888' },
 });
