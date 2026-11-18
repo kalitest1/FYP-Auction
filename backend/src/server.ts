@@ -17,7 +17,9 @@ const io = new Server(server, {
   cors: {
     origin: '*',
     methods: ['GET', 'POST', 'DELETE'],
+    credentials: true,
   },
+  transports: ['websocket', 'polling'], // 確保後端兩者皆接受
 });
 
 app.use(cors());
@@ -32,5 +34,5 @@ setupAuctionSockets(io);
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
-  console.log(`🚀 Backend Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Backend Server running on port ${PORT}`);
 });
